@@ -442,17 +442,14 @@ export default class TextField extends PureComponent {
     };
 
     return (
-      <View
-        style={containerStyle}
-        onStartShouldSetResponder={ () => true }
-        onResponderRelease={this.onPress}>
+      <View style={containerStyle} >
 
         <Animated.View style={[styles.inputContainer, inputContainerStyle]}>
           {disabled && <Line type='dotted' color={baseColor} />}
 
           <Label {...labelProps}>{label}</Label>
 
-          <View style={styles.row}>
+          <View style={styles.row} onStartShouldSetResponder={ () => true } onResponderRelease={this.onPress}>
             {this.renderAffix('prefix', active, focused)}
 
             <TextInput
