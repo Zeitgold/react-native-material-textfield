@@ -7,7 +7,6 @@ import {
   Animated,
   StyleSheet,
   Platform,
-  ViewPropTypes,
 } from 'react-native';
 
 import RN from 'react-native/package.json';
@@ -79,7 +78,7 @@ export default class TextField extends PureComponent {
     prefix: PropTypes.string,
     suffix: PropTypes.string,
 
-    containerStyle: (ViewPropTypes || View.propTypes).style,
+    containerStyle:  View.propTypes.style,
   };
 
   constructor(props) {
